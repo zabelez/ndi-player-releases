@@ -23,7 +23,7 @@ This project is **in active development**. We are installing it on all kinds of 
 
 Open the UI at `https://<player-ip>` or `https://<hostname>.local`. On first boot the screens start black — press **SPACE** on a display to read the address.
 
-Current release: **[v0.17.1](https://github.com/zabelez/ndi-player-releases/releases/tag/v0.17.1)**.
+Current application: **[v0.17.2](https://github.com/zabelez/ndi-player-releases/releases/tag/v0.17.2)** (signed in-place update). Fresh-install ISO is still **[v0.17.1](https://github.com/zabelez/ndi-player-releases/releases/tag/v0.17.1)** until the next image.
 
 ## Help us make it yours
 
@@ -61,16 +61,18 @@ Your configuration, license, and certificates stay put.
 
 | File | Purpose |
 |------|---------|
-| `ndi-player-0.17.1.iso` | Fresh install. **Erases the target disk.** |
+| `ndi-player-0.17.1.iso` | Fresh install. **Erases the target disk.** (latest ISO) |
 | `ndi-player-0.17.1.iso.sha256` | Verify the ISO |
-| `ndi-player-0.17.1.tar.gz` | In-place update (Device → Updates) |
-| `ndi-player-0.17.1.tar.gz.sha256` | Verify the update |
+| `ndi-player-0.17.2.tar.gz` | In-place update (Device → Updates) |
+| `ndi-player-0.17.2.tar.gz.sha256` | Verify the update |
 | `latest.json` + `latest.json.sig` | Signed update manifest |
 
 ```bash
 sha256sum -c ndi-player-0.17.1.iso.sha256
-sha256sum -c ndi-player-0.17.1.tar.gz.sha256
+sha256sum -c ndi-player-0.17.2.tar.gz.sha256
 ```
+
+After a 0.17.1 ISO install, open **Device → Updates** to apply 0.17.2.
 
 ## Talk to us
 
