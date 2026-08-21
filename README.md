@@ -13,17 +13,17 @@ This project is **in active development**. We are installing it on all kinds of 
 - **Boot straight into playback.** No desktop for operators. Connect a monitor, connect the network, and go.
 - **Put a different NDI source on every screen.** Each output gets its own source, resolution, frame rate, and bandwidth.
 - **Switch cleanly.** Optionally prepare the next source before it hits the display.
-- **See what is on the wire.** Format, frame rate, encoder, and bitrate stay visible; offline sources remain in the list.
-- **Fit the room’s network.** Ethernet or Wi-Fi, DHCP or a fixed address, `.local` hostname, NDI groups, discovery across subnets.
+- **See what is on the wire.** Format, frame rate, and bitrate stay visible; offline sources remain in the list.
+- **Fit the room’s network.** Ethernet or Wi-Fi, DHCP or a fixed address, NDI groups, and an NDI Discovery Server when automatic discovery cannot run.
 - **Keep an eye on the box.** CPU, memory, graphics, disk, temperature, and battery in one health view.
-- **Activate a device in seconds.** Each player has its own identity; license from **Device → License**.
+- **Activate a device in seconds.** License from **Device → License**. Email **contact@sysontech.com** with the Device UUID for a test license.
 - **Update without reinstalling.** New versions land from **Device → Updates** on machines that are already in the field.
 - **Get help when you need it.** Start a time-limited remote support session from the UI with a one-time code.
 - **Drive every connected display.** Built-in panels and external monitors are first-class outputs.
 
 Open the UI at `https://<player-ip>` or `https://<hostname>.local`. On first boot the screens start black — press **SPACE** on a display to read the address.
 
-Current application: **[v0.17.2](https://github.com/zabelez/ndi-player-releases/releases/tag/v0.17.2)** (signed in-place update). Fresh-install ISO is still **[v0.17.1](https://github.com/zabelez/ndi-player-releases/releases/tag/v0.17.1)** until the next image.
+Current version: **[v0.18.0](https://github.com/zabelez/ndi-player-releases/releases/tag/v0.18.0)** (new install image and in-place update).
 
 ## Help us make it yours
 
@@ -33,21 +33,44 @@ Tried it on a PC we have never seen? **It worked? Celebrate with us in an issue.
 
 ## New machine — install from ISO
 
-1. Download **`ndi-player-0.17.1.iso`** and **`ndi-player-0.17.1.iso.sha256`** from [Releases](https://github.com/zabelez/ndi-player-releases/releases/latest).
-2. Verify: `sha256sum -c ndi-player-0.17.1.iso.sha256`
-3. Write the image to USB. **This erases the target computer’s internal disk.**
+1. Download **`ndi-player-0.18.0.iso`** and **`ndi-player-0.18.0.iso.sha256`** from [Releases](https://github.com/zabelez/ndi-player-releases/releases/latest).
+2. Verify the download:
 
    ```bash
-   sudo dd if=ndi-player-0.17.1.iso of=/dev/sdX bs=4M status=progress conv=fsync
+   # Linux
+   sha256sum -c ndi-player-0.18.0.iso.sha256
+
+   # macOS
+   shasum -a 256 -c ndi-player-0.18.0.iso.sha256
    ```
 
-4. Boot from USB and let the unattended install finish.
+3. Write the image to a USB stick. **Installing erases the target computer’s internal disk.** The same file works from Linux, macOS, and Windows.
+
+   **macOS or Windows** — flash with [Balena Etcher](https://etcher.balena.io/): select the ISO, select the USB stick, Flash. That is the path that works on a Mac. Rufus also works on Windows (use **DD Image** mode).
+
+   **Linux** — replace `sdX` with the USB device from `lsblk` (the whole disk, not a partition like `sdX1`):
+
+   ```bash
+   sudo dd if=ndi-player-0.18.0.iso of=/dev/sdX bs=4M status=progress conv=fsync
+   ```
+
+   The Linux `dd` line does **not** work on macOS. If you prefer Terminal on a Mac:
+
+   ```bash
+   diskutil list
+   diskutil unmountDisk /dev/diskN
+   sudo dd if=ndi-player-0.18.0.iso of=/dev/rdiskN bs=4m
+   ```
+
+   Replace `N` with the USB disk number. Write to `/dev/rdiskN`, not `/dev/diskN`.
+
+4. Boot from USB and let the install finish. At the end, **remove the USB stick** when asked, then continue so the machine starts the player — not the installer again.
 5. Connect network and a monitor. Press **SPACE** for the IP.
-6. Open `https://<IP>` (self-signed certificate on the first visit).
-7. **Device → License** — paste your token and Activate.
+6. Open `https://<IP>` (accept the certificate warning on the first visit).
+7. **Device → License** — email **contact@sysontech.com** with the Device UUID, paste the token you receive, Activate.
 8. **Displays** — pick a source for each screen.
 
-One ISO for every PC we support. After install, each unit keeps its own name, identity, license, and which source goes where.
+One image for every PC we support. After install, each unit keeps its own name, license, and which source goes where.
 
 ## Already installed — update in place
 
@@ -55,24 +78,28 @@ One ISO for every PC we support. After install, each unit keeps its own name, id
 2. **Check for updates**, then **Apply**.
 3. Reboot if the UI asks you to.
 
-Your configuration, license, and certificates stay put.
+Your settings and license stay put.
 
 ## Downloads
 
 | File | Purpose |
 |------|---------|
-| `ndi-player-0.17.1.iso` | Fresh install. **Erases the target disk.** (latest ISO) |
-| `ndi-player-0.17.1.iso.sha256` | Verify the ISO |
-| `ndi-player-0.17.2.tar.gz` | In-place update (Device → Updates) |
-| `ndi-player-0.17.2.tar.gz.sha256` | Verify the update |
-| `latest.json` + `latest.json.sig` | Signed update manifest |
+| `ndi-player-0.18.0.iso` | Fresh install. **Erases the target disk.** |
+| `ndi-player-0.18.0.iso.sha256` | Verify the image |
+| `ndi-player-0.18.0.tar.gz` | In-place update (Device → Updates) |
+| `ndi-player-0.18.0.tar.gz.sha256` | Verify the update |
 
 ```bash
-sha256sum -c ndi-player-0.17.1.iso.sha256
-sha256sum -c ndi-player-0.17.2.tar.gz.sha256
+# Linux
+sha256sum -c ndi-player-0.18.0.iso.sha256
+sha256sum -c ndi-player-0.18.0.tar.gz.sha256
+
+# macOS
+shasum -a 256 -c ndi-player-0.18.0.iso.sha256
+shasum -a 256 -c ndi-player-0.18.0.tar.gz.sha256
 ```
 
-After a 0.17.1 ISO install, open **Device → Updates** to apply 0.17.2.
+Players installed from an older image can stay on that disk: open **Device → Updates** and apply 0.18.0.
 
 ## Talk to us
 
