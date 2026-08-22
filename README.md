@@ -23,7 +23,7 @@ This project is **in active development**. We are installing it on all kinds of 
 
 Open the UI at `https://<player-ip>` or `https://<hostname>.local`. On first boot the screens start black — press **SPACE** on a display to read the address.
 
-Current version: **[v0.18.0](https://github.com/zabelez/ndi-player-releases/releases/tag/v0.18.0)** (new install image and in-place update).
+Current version: **0.18.1** in-place update (Device → Updates). New USB installs still use the **[0.18.0 image](https://github.com/zabelez/ndi-player-releases/releases/tag/v0.18.0)**, then apply 0.18.1.
 
 ## Help us make it yours
 
@@ -86,20 +86,20 @@ Your settings and license stay put.
 |------|---------|
 | `ndi-player-0.18.0.iso` | Fresh install. **Erases the target disk.** |
 | `ndi-player-0.18.0.iso.sha256` | Verify the image |
-| `ndi-player-0.18.0.tar.gz` | In-place update (Device → Updates) |
-| `ndi-player-0.18.0.tar.gz.sha256` | Verify the update |
+| `ndi-player-0.18.1.tar.gz` | In-place update (Device → Updates) |
+| `ndi-player-0.18.1.tar.gz.sha256` | Verify the update |
 
 ```bash
 # Linux
 sha256sum -c ndi-player-0.18.0.iso.sha256
-sha256sum -c ndi-player-0.18.0.tar.gz.sha256
+sha256sum -c ndi-player-0.18.1.tar.gz.sha256
 
 # macOS
 shasum -a 256 -c ndi-player-0.18.0.iso.sha256
-shasum -a 256 -c ndi-player-0.18.0.tar.gz.sha256
+shasum -a 256 -c ndi-player-0.18.1.tar.gz.sha256
 ```
 
-Players installed from an older image can stay on that disk: open **Device → Updates** and apply 0.18.0.
+Players installed from an older image can stay on that disk: open **Device → Updates** and apply 0.18.1.
 
 ## Talk to us
 
