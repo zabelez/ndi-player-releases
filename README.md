@@ -8,7 +8,7 @@ NDI Player is built for control rooms, classrooms, houses of worship, studios, a
 
 This project is **in active development**. **If you try it and it does not work on your hardware, please tell us.** Open an [issue](https://github.com/zabelez/ndi-player-releases/issues) with what you used and what you saw.
 
-**0.22.0 must be installed from the USB image.** Do not use **Device → Updates** from the previous version: that in-place update does not apply 0.22.0 correctly. After this USB install, later versions can use **Device → Updates** as usual.
+**0.22.0 must be installed from the USB image.** Do not use **Device → Updates** from the previous version: that in-place update does not apply 0.22.0 correctly. After this USB install, apply **0.22.1** from **Device → Updates**.
 
 ## What you can do today
 
@@ -23,7 +23,7 @@ This project is **in active development**. **If you try it and it does not work 
 
 Open the UI at `https://<player-ip>` or `https://<hostname>.local`. On first boot the screens start black — press **SPACE** on a display to read the address.
 
-Current version: **0.22.0**.
+Current version: **0.22.1**.
 
 ## New machine — USB image (Try or Install)
 
@@ -48,7 +48,9 @@ Current version: **0.22.0**.
 
 ## Already installed — 0.22.0 requires a USB install
 
-Do not use **Device → Updates** to reach 0.22.0 from a previous version. Write the 0.22.0 ISO, boot from USB, and choose **Install NDI Player**. Installing erases the internal disk. After 0.22.0 is on the machine, later versions can apply from **Device → Updates**.
+Do not use **Device → Updates** to reach 0.22.0 from a previous version. Write the 0.22.0 ISO, boot from USB, and choose **Install NDI Player**. Installing erases the internal disk.
+
+If the player is already on **0.22.0**, apply **0.22.1** from **Device → Updates**. You do not need to reinstall from USB. See [0.22.1](https://github.com/zabelez/ndi-player-releases/releases/tag/v0.22.1).
 
 ## Downloads
 
@@ -56,8 +58,8 @@ Do not use **Device → Updates** to reach 0.22.0 from a previous version. Write
 |------|---------|
 | `ndi-player-0.22.0.iso` | Try or Install. **Install erases the target disk.** |
 | `ndi-player-0.22.0.iso.sha256` | Verify the image |
-| `ndi-player-0.22.0.tar.gz` | Linux update package (after a 0.22.0 install) |
-| `ndi-player-0.22.0.tar.gz.sha256` | Verify the update package |
+| `ndi-player-0.22.1.tar.gz` | Linux update package (after a 0.22.0 install) |
+| `ndi-player-0.22.1.tar.gz.sha256` | Verify the update package |
 
 ## Talk to us
 
