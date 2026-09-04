@@ -167,4 +167,9 @@ Companion packages are on [ndi-player-companion](https://github.com/zabelez/ndi-
 
 ## Talk to us
 
-Questions, ideas, a PC that surprised you — [open an issue](https://github.com/zabelez/ndi-player-releases/issues).
+This project grows with the rooms that try it. Join in.
+
+- [Open an issue](https://github.com/zabelez/ndi-player-releases/issues) with the hardware you used, what worked, and what did not.
+- Follow [Facebook](https://www.facebook.com/ndiplayer) and [Instagram](https://www.instagram.com/ndiplayer). Share how you use NDI Player. Photos and short videos from your room, classroom, or control space are welcome.
+
+We want to learn from real installs. Tell us what is missing.
